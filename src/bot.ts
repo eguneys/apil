@@ -1,21 +1,21 @@
 import Authorized from './auth';
-import * as lit from './types';
+import * as at from './types';
 
-export class Bot extends Authorized {
+export default class Bot extends Authorized {
 
-  constructor(auth: lit.Authorization) {
+  constructor(auth: at.Authorization) {
     super(auth);
   }
   
   incomingEvents() {
-    return this.ndjson<lit.IncomingEvent>('/api/stream/event');
+    return this.ndjson<at.IncomingEvent>('/api/stream/event');
   };
 
   gameState(gameId: string) {
-    return this.ndjson<lit.GameState>(`/api/bot/game/stream/${gameId}`);
+    return this.ndjson<at.IncomingGameState>(`/api/bot/game/stream/${gameId}`);
   }
 
-  move(gameId: string, move: string, offeringDraw?: boolean) {
+  move(gameId: string, move: at.Uci, offeringDraw?: boolean) {
     return this.xhr(`/api/bot/game/${gameId}/move/${move}?offeringDraw=${offeringDraw||false}`);
   }
   
