@@ -12,6 +12,10 @@ export type GameStatus = string
 export type VariantKey = string
 export type TimeControlShow = string
 
+export type ChatRoom =
+  | "player"
+  | "spectator"
+
 export type TimeControl = {
   "type":"clock",
   "limit": number,
