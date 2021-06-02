@@ -1,9 +1,19 @@
-import xhr from './xhr';
+import Authorized from './auth';
+import * as lit from './types';
 
-export function allChapters(studyId: string) {
-  return xhr.text(`/study/${studyId}.pgn`);
-}
+export default class StudyApi extends Authorized {
 
-export function oneChapter(studyId: string, chapterId: string) {
-  return xhr.text(`/study/${studyId}/${chapterId}.pgn`);
+  static make = (auth: lit.Authorization) => new StudyApi(auth);
+  
+  constructor(auth: lit.Authorization) {
+    super(auth);
+  }
+  
+  allChapters(studyId: string) {
+    return this.text(`/study/${studyId}.pgn`);
+  }
+
+  oneChapter(studyId: string, chapterId: string) {
+    return this.text(`/study/${studyId}/${chapterId}.pgn`);
+  }
 }

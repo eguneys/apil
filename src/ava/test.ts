@@ -1,10 +1,12 @@
 import test from 'ava';
-
-import { allChapters } from '../study';
+import { token } from './_conf';
+import StudyApi from '../study';
 
 test('study', t => {
 
-  return allChapters('Wv6ppMmp').then(_ => {
+  let api = StudyApi.make({token});
+  
+  return api.allChapters('1l75flCp').then(_ => {
     t.is(typeof _, 'string');
   });
   

@@ -30,5 +30,12 @@ export default class Authorized {
       ...opts
     });
   }
+
+  text(endpoint: string, opts?: any) {
+    return xhr.text(endpoint, {
+      headers: this.authHeaders,
+      ...opts
+    });
+  }
   
 }
