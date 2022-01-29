@@ -2,6 +2,16 @@ import test from 'ava';
 import { token } from './_conf';
 import StudyApi from '../study';
 
+test('one chapter', t => {
+
+  let api = StudyApi.make({token});
+  https://lichess.org/study/VQCFJZjz/gUSwY3Sv 
+  return api.oneChapter('VQCFJZjz', 'gUSwY3Sv').then(_ => {
+    t.is(typeof _, 'string');
+  });
+
+})
+
 test('private study', t => {
 
   let api = StudyApi.make({token});

@@ -14,6 +14,6 @@ export default class StudyApi extends Authorized {
   }
 
   oneChapter(studyId: string, chapterId: string) {
-    return this.text(`/api/study/${studyId}/${chapterId}.pgn`);
+    return this.text(`/study/${studyId}/${chapterId}.pgn`);
   }
 }
