@@ -1,5 +1,5 @@
-import Authorized from './auth';
-import * as lit from './types';
+import Authorized from './auth.js';
+import * as lit from './types.js';
 
 export default class StudyApi extends Authorized {
 

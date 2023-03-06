@@ -1,6 +1,6 @@
 import test from 'ava';
-import { token } from './_conf';
-import Bot from '../bot';
+import { token } from './_conf.js';
+import Bot from '../bot.js';
 
 let bot = new Bot({ token });
 

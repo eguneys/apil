@@ -1,6 +1,6 @@
 import test from 'ava';
-import { token } from './_conf';
-import StudyApi from '../study';
+import { token } from './_conf.js';
+import StudyApi from '../study.js';
 
 test('one chapter', t => {
 

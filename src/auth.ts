@@ -1,6 +1,6 @@
-import * as lit from './types';
-import stream from './stream';
-import xhr from './xhr';
+import * as lit from './types.js';
+import stream from './stream.js';
+import xhr from './xhr.js';
 import { StreamingResponse } from 'rhx';
 
 export const authHeaders = (auth: lit.Authorization) => ({

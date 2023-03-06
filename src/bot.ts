@@ -1,6 +1,6 @@
-import Authorized from './auth';
-import * as at from './types';
-import xhr from './xhr';
+import Authorized from './auth.js';
+import * as at from './types.js';
+import xhr from './xhr.js';
 
 export default class Bot extends Authorized {
 
